@@ -13,9 +13,10 @@ class MapViewController < UIViewController
   end
 
   def viewWillAppear(animated)
-    # Scotland: 56.4396° N, 4.0532° W
-    region = MKCoordinateRegionMake(CLLocationCoordinate2D.new(56.4396, -4.0532), MKCoordinateSpanMake(4, 4))
+    region = MKCoordinateRegionMake(CLLocationCoordinate2D.new(55.63, -6.11), MKCoordinateSpanMake(0.4, 0.4))
     self.view.setRegion(region)
+    DistilleryAnnotation::Data.each { |annotation| self.view.addAnnotation(annotation) }
+    
     navigationController.setNavigationBarHidden(true, animated:true)
   end    
   
