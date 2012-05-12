@@ -10,14 +10,11 @@ class MapViewController < UIViewController
   end
 
   def viewDidLoad
-    #view.frame = @window.rootViewController.view.bounds
-
-    # Center on Brussels.
-    region = MKCoordinateRegionMake(CLLocationCoordinate2D.new(50.85, 4.35), MKCoordinateSpanMake(3.1, 3.1))
-    self.view.setRegion(region)
   end
 
   def viewWillAppear(animated)
+    region = MKCoordinateRegionMake(CLLocationCoordinate2D.new(44.7981, -93.5267), MKCoordinateSpanMake(0.2, 0.2))
+    self.view.setRegion(region)
     navigationController.setNavigationBarHidden(true, animated:true)
   end    
   
